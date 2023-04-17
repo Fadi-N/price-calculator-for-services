@@ -7,33 +7,36 @@ export const mainServicesSlice = createSlice({
             'year-2023': [{
                 'internet': 39,
                 'tv': 49,
-                'phone-subscription': 29,
-                '4k-decoder': 29,
-                'internet-tv': 79,
-                'internet-phone-subscription': 64
+                'phoneSubscription': 29,
+                'decoder': 29,
+                'internetAndTv': 79,
+                'internetAndPhoneSubscription': 64
             }],
             'year-2024': [{
                 'internet': 49,
                 'tv': 49,
-                'phone-subscription': 29,
-                '4k-decoder': 29,
-                'internet-tv': 89,
-                'internet-phone-subscription': 64
+                'phoneSubscription': 29,
+                'decoder': 29,
+                'internetAndTv': 89,
+                'internetAndPhoneSubscription': 64
             }],
             'year-2025': [{
                 'internet': 59,
                 'tv': 59,
-                'phone-subscription': 29,
-                '4k-decoder': 29,
-                'internet-tv': 99,
-                'internet-phone-subscription': 64
+                'phoneSubscription': 29,
+                'decoder': 29,
+                'internetAndTv': 99,
+                'internetAndPhoneSubscription': 64
             }]
-        }
+        },
+        selectedYear: 2023,
     },
     reducers:{
-
+        setSelectedYear: (state, action) =>{
+            state.selectedYear = action.payload
+        }
     }
 })
 
-export const {} = mainServicesSlice.actions
+export const {setSelectedYear} = mainServicesSlice.actions
 export default mainServicesSlice.reducer

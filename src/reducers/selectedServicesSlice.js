@@ -2,15 +2,15 @@ import {createSlice} from "@reduxjs/toolkit";
 
 export const selectedServicesSlice = createSlice({
     name: 'selectedServices',
-    initialState:{
+    initialState: {
         selectedServices: []
     },
-    reducers:{
+    reducers: {
         setSelectedServices: (state, action) => {
             state.selectedServices = [...state.selectedServices, action.payload]
         }
     }
 })
 
-export const {setSelectedServices} = selectedServicesSlice.actions
+export const {setSelectedServices, addToCart} = selectedServicesSlice.actions
 export default selectedServicesSlice.reducer

@@ -5,7 +5,7 @@ import {setSelectedServices} from "../reducers/selectedServicesSlice";
 function ServiceList() {
    const dispatch = useDispatch()
 
-    const [availableServices, setAvailableServices] = useState(['Internet', 'TV', 'Phone subscription', '4K decoder'])
+    const [availableServices, setAvailableServices] = useState(['Internet', 'TV', 'Phone subscription', '4K decoder', 'Internet + TV', 'Internet + phone subscription'])
 
     return (
         <>
