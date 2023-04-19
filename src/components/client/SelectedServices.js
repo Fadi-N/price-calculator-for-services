@@ -1,7 +1,7 @@
 import {useSelector} from "react-redux";
 
 function SelectedServices() {
-    const selectedServices = useSelector((state) => state.selectedServices.selectedServices)
+    const selectedServices = useSelector((state) => state.services.selectedServices)
     return(
         <div>
             {selectedServices.map((service, index) => (
