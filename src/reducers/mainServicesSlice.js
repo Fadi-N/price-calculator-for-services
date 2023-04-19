@@ -64,9 +64,12 @@ export const mainServicesSlice = createSlice({
                 ...state.data,
                 [`year-${action.payload}`]: [{}]
             };
+        },
+        setNewService: (state, action) => {
+            console.log(action.payload)
         }
     }
 })
 
-export const {setSelectedYear, setSelectedServices, countSelectedServices, setNewYear} = mainServicesSlice.actions
+export const {setSelectedYear, setSelectedServices, countSelectedServices, setNewYear, setNewService} = mainServicesSlice.actions
 export default mainServicesSlice.reducer
