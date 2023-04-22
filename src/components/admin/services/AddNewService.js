@@ -1,6 +1,8 @@
 import {useDispatch} from "react-redux";
 import {useState} from "react";
 import {setNewService, setNewYear} from "../../../reducers/mainServicesSlice";
+import {faCheck, faXmark} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 function AddNewService() {
     const dispatch = useDispatch()
@@ -16,8 +18,8 @@ function AddNewService() {
     }
     return (
         <div className="col-md-2">
-            <p>Services</p>
-            <button className="btn btn-primary btn-sm" onClick={handleAddNewYear}
+            <p className="fs-3">Services</p>
+            <button className="btn  btn-sm" onClick={handleAddNewYear}
                     style={{display: active ? 'none' : "block"}}>Add new service
             </button>
             {
@@ -29,8 +31,8 @@ function AddNewService() {
                                placeholder="New service"/>
                         <label htmlFor="service">New service</label>
                     </div>
-                    <button className="btn btn-success btn-sm" onClick={handleSubmit}>Add</button>
-                    <button className="btn btn-danger btn-sm" onClick={handleAddNewYear}>Cancel</button>
+                    <button className="btn btn-sm btn-submit w-100 mb-2" onClick={handleSubmit}><FontAwesomeIcon icon={faCheck} /></button>
+                    <button className="btn btn-sm btn-cancel w-100" onClick={handleAddNewYear}><FontAwesomeIcon icon={faXmark}/></button>
                 </>
             }
         </div>

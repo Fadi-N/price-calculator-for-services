@@ -1,6 +1,8 @@
 import {useState} from "react";
 import {setNewYear} from "../../../reducers/mainServicesSlice";
 import {useDispatch} from "react-redux";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faCheck, faXmark} from "@fortawesome/free-solid-svg-icons";
 
 function AddNewYear(){
     const dispatch = useDispatch()
@@ -16,9 +18,9 @@ function AddNewYear(){
     }
     return(
         <>
-            <p>Years:</p>
             <div className="col-md-2">
-                <button className="btn btn-primary btn-sm" onClick={handleAddNewYear} style={{display: active ? 'none' : "block"}}>Add new year</button>
+                <p className="fs-3">Years:</p>
+                <button className="btn  btn-sm" onClick={handleAddNewYear} style={{display: active ? 'none' : "block"}}>Add new year</button>
                 {
                     active &&
                     <>
@@ -27,8 +29,8 @@ function AddNewYear(){
                                    placeholder="New year"/>
                             <label htmlFor="year">New year</label>
                         </div>
-                        <button className="btn btn-success btn-sm" onClick={handleSubmit}>Add</button>
-                        <button className="btn btn-danger btn-sm" onClick={handleAddNewYear}>Cancel</button>
+                        <button className="btn btn-sm btn-submit w-100 mb-2" onClick={handleSubmit}><FontAwesomeIcon icon={faCheck} /></button>
+                        <button className="btn btn-sm btn-cancel w-100" onClick={handleAddNewYear}><FontAwesomeIcon icon={faXmark} /></button>
                     </>
                 }
 

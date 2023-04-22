@@ -16,14 +16,15 @@ function ServiceList() {
     return (
         <>
             <>
-                <h1>Our services</h1>
-                <div className="row row-cols-1 row-cols-md-3 g-2">
+                <p className="fs-3">Services</p>
+                <div className="row row-cols-1 row-cols-md-3 g-3">
                     {availableServices.map((availableService, index) => (
                         <div className="col">
                             <div className="card">
                                 <div className="card-body" key={index}>
                                     <p>{availableService}</p>
-                                    <button className="btn btn-primary"
+                                    <hr/>
+                                    <button className="btn add-to-cart-btn"
                                             onClick={() => handleOnClick(availableService)}>Add to cart
                                     </button>
                                 </div>

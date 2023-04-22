@@ -1,0 +1,11 @@
+.filters, .service-list{
+  background-color: #f5f5f5;
+  border-radius: 0.75rem;
+}
+
+.btn-cancel{
+  background-color: #DC3545 !important;
+  &:hover{
+    background-color: #d82537 !important;
+  }
+}

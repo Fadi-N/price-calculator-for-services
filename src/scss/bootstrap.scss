@@ -1,0 +1,15 @@
+.btn{
+  background-color: #029791;
+  border-radius: 1rem;
+  padding: 0.25rem 1.25rem;
+  &:hover{
+    background-color: #02847e;
+  }
+}
+
+.card{
+  background-color: #3d5872;
+  .card-body{
+    text-align: center;
+  }
+}

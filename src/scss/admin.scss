@@ -1,0 +1,16 @@
+.year-edit-container, .service-edit-container{
+  background-color: #f5f5f5;
+  border-radius: 0.75rem;
+}
+
+
+.available-year-container, .available-service-container{
+  display: flex;
+  .year, .service{
+    background-color: #3d5872;
+    padding: 0.25rem 2.75rem 0.25rem 1.25rem;
+    border-radius: 1rem;
+    margin-right: 6px;
+  }
+
+}
