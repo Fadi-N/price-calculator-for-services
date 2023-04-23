@@ -14,3 +14,23 @@
   }
 
 }
+
+.btn-delete{
+  background-color: #DC3545 !important;
+  &:hover{
+    background-color: #d82537 !important;
+  }
+}
+
+.btn-disable{
+  background-color: #b7ada1 !important;
+  &:hover{
+    background-color: #aea396 !important;
+  }
+}
+
+.btn-delete, .btn-disable{
+  padding: 0 0.25rem !important;
+  height: 1.25rem;
+  font-size: 10px
+}

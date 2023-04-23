@@ -3,6 +3,7 @@ import {useState} from "react";
 import {setNewService, setNewYear} from "../../../reducers/mainServicesSlice";
 import {faCheck, faXmark} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import ListOfYears from "../../client/ListOfYears";
 
 function AddNewService() {
     const dispatch = useDispatch()
@@ -17,7 +18,7 @@ function AddNewService() {
         handleAddNewYear()
     }
     return (
-        <div className="col-md-2">
+        <div className="col-md-3">
             <p className="fs-3">Services</p>
             <button className="btn  btn-sm" onClick={handleAddNewYear}
                     style={{display: active ? 'none' : "block"}}>Add new service

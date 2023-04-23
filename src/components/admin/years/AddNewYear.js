@@ -18,7 +18,7 @@ function AddNewYear(){
     }
     return(
         <>
-            <div className="col-md-2">
+            <div className="col-md-3">
                 <p className="fs-3">Years:</p>
                 <button className="btn  btn-sm" onClick={handleAddNewYear} style={{display: active ? 'none' : "block"}}>Add new year</button>
                 {
