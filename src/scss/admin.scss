@@ -8,7 +8,7 @@
   display: flex;
   .year, .service{
     background-color: #3d5872;
-    padding: 0.25rem 2.75rem 0.25rem 1.25rem;
+    padding: 0.25rem 3.25rem 0.25rem 1.25rem;
     border-radius: 1rem;
     margin-right: 6px;
   }
@@ -33,4 +33,18 @@
   padding: 0 0.25rem !important;
   height: 1.25rem;
   font-size: 10px
+}
+
+.btn-year-tool-container{
+  position: relative;
+  top:-1.625rem;
+  right: 0.75rem;
+}
+.service-container{
+  height: 2.5rem;
+  .btn-service-tool-container{
+    position: relative;
+    right: 0.5rem;
+    top:-2.125rem;
+  }
 }

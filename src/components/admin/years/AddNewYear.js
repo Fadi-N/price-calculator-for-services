@@ -20,20 +20,21 @@ function AddNewYear(){
         <>
             <div className="col-md-3">
                 <p className="fs-3">Years:</p>
-                <button className="btn  btn-sm" onClick={handleAddNewYear} style={{display: active ? 'none' : "block"}}>Add new year</button>
+                <button className="btn btn-sm w-100" onClick={handleAddNewYear} style={{display: active ? 'none' : "block"}}>Add new year</button>
                 {
                     active &&
-                    <>
+                    <div>
                         <div className="form-floating mb-3">
                             <input type="text" className="form-control" id="year" value={year} onChange={(e)=>setYear(e.target.value)}
                                    placeholder="New year"/>
                             <label htmlFor="year">New year</label>
                         </div>
-                        <button className="btn btn-sm btn-submit w-100 mb-2" onClick={handleSubmit}><FontAwesomeIcon icon={faCheck} /></button>
-                        <button className="btn btn-sm btn-cancel w-100" onClick={handleAddNewYear}><FontAwesomeIcon icon={faXmark} /></button>
-                    </>
+                        <div className="d-flex">
+                            <button className="btn btn-sm w-100 me-1 btn-submit" onClick={handleSubmit}><FontAwesomeIcon icon={faCheck} /></button>
+                            <button className="btn btn-sm w-100 btn-cancel" onClick={handleAddNewYear}><FontAwesomeIcon icon={faXmark} /></button>
+                        </div>
+                    </div>
                 }
-
             </div>
         </>
     )

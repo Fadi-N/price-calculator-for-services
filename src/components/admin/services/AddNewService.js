@@ -20,7 +20,7 @@ function AddNewService() {
     return (
         <div className="col-md-3">
             <p className="fs-3">Services</p>
-            <button className="btn  btn-sm" onClick={handleAddNewYear}
+            <button className="btn btn-sm w-100" onClick={handleAddNewYear}
                     style={{display: active ? 'none' : "block"}}>Add new service
             </button>
             {
@@ -29,11 +29,13 @@ function AddNewService() {
                     <div className="form-floating mb-3">
                         <input type="text" className="form-control" id="service" value={service}
                                onChange={(e) => setService(e.target.value)}
-                               placeholder="New service"/>
-                        <label htmlFor="service">New service</label>
+                               placeholder="Service name"/>
+                        <label htmlFor="service">Service name</label>
                     </div>
-                    <button className="btn btn-sm btn-submit w-100 mb-2" onClick={handleSubmit}><FontAwesomeIcon icon={faCheck} /></button>
-                    <button className="btn btn-sm btn-cancel w-100" onClick={handleAddNewYear}><FontAwesomeIcon icon={faXmark}/></button>
+                    <div className="d-flex">
+                        <button className="btn btn-sm w-100 me-1 btn-submit" onClick={handleSubmit}><FontAwesomeIcon icon={faCheck} /></button>
+                        <button className="btn btn-sm w-100 btn-cancel" onClick={handleAddNewYear}><FontAwesomeIcon icon={faXmark}/></button>
+                    </div>
                 </>
             }
         </div>

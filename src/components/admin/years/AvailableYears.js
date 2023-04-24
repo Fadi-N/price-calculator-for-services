@@ -19,15 +19,15 @@ function AvailableYears() {
                             onMouseEnter={() => setHoveredIndex(index)}
                             onMouseLeave={() => setHoveredIndex(-1)}
                         >
-                            <p
-                                className="year"
+                            <span
+                                className="year d-flex"
                                 value={year.slice(5, 9)}
                                 style={{opacity: data[year].disabled ? "0.5" : "1"}}
                             >
                                 {year.slice(5, 9)}
-                            </p>
-                            {hoveredIndex === index && (
-                                <>
+                            </span>
+                            {hoveredIndex === index ? (
+                                <div className="d-flex justify-content-end btn-year-tool-container">
                                     <button
                                         className="btn btn-sm me-1 btn-disable"
                                         onClick={() => {
@@ -46,8 +46,7 @@ function AvailableYears() {
                                     >
                                         <FontAwesomeIcon icon={faTrash}/>
                                     </button>
-                                </>
-                            )}
+                                </div>) : null}
                         </div>
                     ))}
                 </div>

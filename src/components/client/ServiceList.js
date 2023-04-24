@@ -5,7 +5,9 @@ import {countSelectedServices} from "../../reducers/mainServicesSlice";
 
 function ServiceList() {
     const dispatch = useDispatch()
-
+    const data = useSelector((state) => state.services.data)
+    const selectedYear = useSelector((state) => state.services.selectedYear)
+    const selectedServices = useSelector((state) => state.services.selectedServices)
     const [availableServices, setAvailableServices] = useState(['Internet', 'TV', 'Phone subscription', '4K decoder', 'Internet + TV', 'Internet + phone subscription'])
 
     const handleOnClick = (availableService) => {
@@ -23,7 +25,12 @@ function ServiceList() {
                             <div className="card-body" key={index}>
                                 <p>{availableService}</p>
                                 <button className="btn add-to-cart-btn"
-                                        onClick={() => handleOnClick(availableService)}>Add to cart
+                                        onClick={() => handleOnClick(availableService)}
+                                        disabled={
+                                            availableService.indexOf("decoder") >= 0 &&
+                                            !selectedServices.includes("TV")
+                                        }
+                                >Add to cart
                                 </button>
                             </div>
                         </div>

@@ -35,14 +35,21 @@ function Navbar() {
                                 <div className="offcanvas-body">
                                     <ul className="list-unstyled">
                                         {selectedServices.length > 0 ? (
-                                            selectedServices.map((selectedService, index) => (
-                                                <li key={index}>
-                                                    <span href="#">{selectedService}</span>
-                                                </li>
-                                            ))
+                                            <>
+                                                {
+                                                    selectedServices.map((selectedService, index) => (
+                                                        <li key={index}>
+                                                            <span href="#">{selectedService}</span>
+                                                        </li>
+
+                                                    ))
+                                                }
+                                                <hr/>
+                                                <p className="fs-4">Total price: <span className="float-end">{totalPrice} zł</span></p>
+                                            </>
                                         ) : (
                                             <li>
-                                                <span href="#">
+                                                <span className="d-flex justify-content-center">
                                                 Your basket is empty!
                                                 </span>
                                             </li>

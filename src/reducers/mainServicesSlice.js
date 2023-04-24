@@ -11,7 +11,7 @@ export const mainServicesSlice = createSlice({
                     'tv': {'price': 49, 'disabled': false},
                     'phoneSubscription': {'price': 29, 'disabled': false},
                     'decoder': {'price': 29, 'disabled': false},
-                    'internetAndTv': {'price': 79, 'disabled': false},
+                    'internetAndTv': {'price': 79, 'content': 'Free 4K decoder', 'disabled': false},
                     'internetAndPhoneSubscription': {'price': 64, 'disabled': false},
                 }],
             },

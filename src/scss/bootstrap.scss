@@ -5,6 +5,10 @@
   &:hover{
     background-color: #02847e;
   }
+  &:disabled{
+    background-color: #02847e;
+    opacity: 0.3;
+  }
 }
 
 .card{
@@ -13,4 +17,9 @@
   .card-body{
     text-align: center;
   }
+}
+
+.offcanvas-header{
+  /*border-bottom: 1px solid #17273d;*/
+  box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.3);
 }
