@@ -38,7 +38,7 @@ export const mainServicesSlice = createSlice({
                 }],
             }
         },
-        selectedYear: 2023,
+        selectedYear: '2023',
         totalPrice: 0,
         selectedServices: []
     },
@@ -51,7 +51,12 @@ export const mainServicesSlice = createSlice({
             console.log(state.selectedServices)
         },
         countSelectedServices: (state, action) => {
-            state.data[`year-${state.selectedYear}`].services.map((service, index) => {
+            let count = 0;
+            state.selectedServices.map(service => {
+                count += service.price;
+            })
+            state.totalPrice = count
+            /*state.data[`year-${state.selectedYear}`].services.map((service, index) => {
                 state.selectedServices.forEach(selectedService => {
 
                     if (selectedService.toLowerCase() === 'internet') {
@@ -68,7 +73,7 @@ export const mainServicesSlice = createSlice({
                         state.totalPrice += service.internetAndPhoneSubscription.price
                     }
                 })
-            })
+            })*/
         },
         setNewYear: (state, action) => {
             state.data = {
@@ -77,7 +82,17 @@ export const mainServicesSlice = createSlice({
             };
         },
         setNewService: (state, action) => {
-            console.log(action.payload)
+            const service = action.payload.service
+                .split(' ')
+                .map((word, index) => index === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1))
+                .join('');
+            const year = `year-${action.payload.year}`;
+            const price = action.payload.price;
+
+            const newService = {};
+            newService[service] = {price: price, disabled: false};
+
+            state.data[year].services.push(newService);
         },
         deleteYear: (state, action) => {
             delete state.data[action.payload]

@@ -4,7 +4,7 @@ import {useLocation} from "react-router-dom";
 
 import '../../scss/navbar.scss'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faCartShopping} from "@fortawesome/free-solid-svg-icons";
+import {faCartShopping, faTrash} from "@fortawesome/free-solid-svg-icons";
 
 function Navbar() {
     const selectedServices = useSelector((state) => state.services.selectedServices)
@@ -38,14 +38,19 @@ function Navbar() {
                                             <>
                                                 {
                                                     selectedServices.map((selectedService, index) => (
-                                                        <li key={index}>
-                                                            <span href="#">{selectedService}</span>
-                                                        </li>
-
+                                                        <>
+                                                            <li key={index}>
+                                                                <span>{selectedService.service.replace(/[A-Z]/g, (match) => ` ${match.toLowerCase()}`)}<span
+                                                                    className="float-end">{selectedService.price} zł</span>
+                                                                </span>
+                                                                <button className="btn btn-sm ms-2 btn-delete"><FontAwesomeIcon icon={faTrash} /></button>
+                                                            </li>
+                                                        </>
                                                     ))
                                                 }
                                                 <hr/>
-                                                <p className="fs-4">Total price: <span className="float-end">{totalPrice} zł</span></p>
+                                                <p className="fs-4">Total price: <span
+                                                    className="float-end">{totalPrice} zł</span></p>
                                             </>
                                         ) : (
                                             <li>

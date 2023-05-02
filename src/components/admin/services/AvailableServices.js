@@ -19,7 +19,7 @@ function AvailableServices() {
                             <div key={index}>
                                 {Object.entries(item).map(([key, value]) => (
                                     <div className="service-container" onMouseEnter={() => setHoveredIndex({ year, key })} onMouseLeave={() => setHoveredIndex({ year: "", key: "" })} key={key}>
-                                        <span className="d-flex w-100 mb-2 service" style={{ opacity: value.disabled ? '0.5' : '1' }}>{key} - {value.price}</span>
+                                        <span className="d-flex w-100 mb-2 service" style={{ opacity: value.disabled ? '0.5' : '1' }}>{key.replace(/[A-Z]/g, (match) => ` ${match.toLowerCase()}`)} - {value.price}</span>
                                         {hoveredIndex.year === year && hoveredIndex.key === key ? (
                                             <div className="d-flex justify-content-end btn-service-tool-container">
                                                 <button className="btn btn-sm me-1 btn-disable" onClick={() => {
