@@ -1,50 +1,43 @@
-.year-edit-container, .service-edit-container{
+.year-edit-container, .service-edit-container {
   background-color: #f5f5f5;
   border-radius: 0.75rem;
 }
 
 
-.available-year-container, .available-service-container{
+.available-year-container, .available-service-container {
   display: flex;
-  .year, .service{
-    background-color: #3d5872;
-    padding: 0.25rem 3.25rem 0.25rem 1.25rem;
-    border-radius: 1rem;
-    margin-right: 6px;
-  }
 
+  .year, .service {
+    background-color: #3d5872;
+    border-radius: 1rem;
+  }
 }
 
-.btn-delete{
+.btn-delete {
   background-color: #DC3545 !important;
-  &:hover{
+
+  &:hover {
     background-color: #d82537 !important;
   }
 }
 
-.btn-disable{
+.btn-disable {
   background-color: #b7ada1 !important;
-  &:hover{
+
+  &:hover {
     background-color: #aea396 !important;
   }
 }
 
-.btn-delete, .btn-disable{
+.btn-delete, .btn-disable {
+  position: relative;
+  top: 0.125rem;
+  right: 0.3rem;
   padding: 0 0.25rem !important;
   height: 1.25rem;
   font-size: 10px
 }
 
-.btn-year-tool-container{
-  position: relative;
-  top:-1.625rem;
-  right: 0.75rem;
-}
-.service-container{
-  height: 2.5rem;
-  .btn-service-tool-container{
-    position: relative;
-    right: 0.5rem;
-    top:-2.125rem;
-  }
-}
+
+
+

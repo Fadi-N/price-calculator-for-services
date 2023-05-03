@@ -1,9 +1,6 @@
-import {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {deleteService, disableService, setSelectedServices} from "../../reducers/mainServicesSlice";
+import {setSelectedServices} from "../../reducers/mainServicesSlice";
 import {countSelectedServices} from "../../reducers/mainServicesSlice";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faBan, faTrash} from "@fortawesome/free-solid-svg-icons";
 
 function ServiceList() {
     const dispatch = useDispatch()
@@ -31,12 +28,11 @@ function ServiceList() {
                                                 <div className="card">
                                                     <div className="card-body">
                                                         <p>{key.replace(/[A-Z]/g, (match) => ` ${match.toLowerCase()}`)}</p>
-                                                        <p>{value.price}</p>
+                                                        <p>{value.price} zł</p>
                                                         <button className="btn add-to-cart-btn"
                                                                 onClick={() => handleOnClick(key, value.price)}
                                                                 disabled={
-                                                                    key.indexOf("decoder") >= 0 &&
-                                                                    !key.includes("tv")
+                                                                    key.indexOf("decoder") >= 0 && !selectedServices.some(service => service.service.includes("tv"))
                                                                 }
                                                         >Add to cart
                                                         </button>

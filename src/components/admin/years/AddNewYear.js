@@ -25,7 +25,7 @@ function AddNewYear(){
                     active &&
                     <div>
                         <div className="form-floating mb-3">
-                            <input type="text" className="form-control" id="year" value={year} onChange={(e)=>setYear(e.target.value)}
+                            <input type="number" className="form-control" id="year" value={year} onChange={(e)=>setYear(e.target.value)}
                                    placeholder="New year"/>
                             <label htmlFor="year">New year</label>
                         </div>

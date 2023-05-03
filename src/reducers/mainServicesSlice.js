@@ -48,7 +48,6 @@ export const mainServicesSlice = createSlice({
         },
         setSelectedServices: (state, action) => {
             state.selectedServices = [...state.selectedServices, action.payload]
-            console.log(state.selectedServices)
         },
         countSelectedServices: (state, action) => {
             let count = 0;
@@ -56,24 +55,6 @@ export const mainServicesSlice = createSlice({
                 count += service.price;
             })
             state.totalPrice = count
-            /*state.data[`year-${state.selectedYear}`].services.map((service, index) => {
-                state.selectedServices.forEach(selectedService => {
-
-                    if (selectedService.toLowerCase() === 'internet') {
-                        state.totalPrice += service.internet.price
-                    } else if (selectedService.toLowerCase() === 'tv') {
-                        state.totalPrice += service.tv.price
-                    } else if (selectedService.toLowerCase().includes('phone')) {
-                        state.totalPrice += service.phoneSubscription.price
-                    } else if (selectedService.toLowerCase().includes('decoder')) {
-                        state.totalPrice += service.decoder.price
-                    } else if (selectedService.toLowerCase().includes('+ tv')) {
-                        state.totalPrice += service.internetAndTv.price
-                    } else if (selectedService.toLowerCase().includes('+ phone')) {
-                        state.totalPrice += service.internetAndPhoneSubscription.price
-                    }
-                })
-            })*/
         },
         setNewYear: (state, action) => {
             state.data = {
@@ -88,11 +69,13 @@ export const mainServicesSlice = createSlice({
                 .join('');
             const year = `year-${action.payload.year}`;
             const price = action.payload.price;
+            const benefit = action.payload.benefit;
 
             const newService = {};
-            newService[service] = {price: price, disabled: false};
+            newService[service] = {price: price, disabled: false, benefit: benefit};
 
             state.data[year].services.push(newService);
+            console.log(JSON.stringify(state.data[year]))
         },
         deleteYear: (state, action) => {
             delete state.data[action.payload]
@@ -107,6 +90,9 @@ export const mainServicesSlice = createSlice({
         disableService: (state, action) => {
             const service = action.payload.key
             state.data[action.payload.year].services[0][service].disabled = !action.payload.status
+        },
+        removeFromBasket: (state, action) => {
+            state.selectedServices.splice(action.payload, 1)
         }
     }
 })
@@ -117,6 +103,7 @@ export const {
     countSelectedServices,
     setNewYear,
     setNewService,
-    deleteYear, deleteService, disableYear, disableService
+    deleteYear, deleteService, disableYear, disableService,
+    removeFromBasket
 } = mainServicesSlice.actions
 export default mainServicesSlice.reducer

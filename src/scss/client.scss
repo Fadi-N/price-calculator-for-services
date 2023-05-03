@@ -1,6 +1,15 @@
 .filters, .service-list{
   background-color: #f5f5f5;
-  border-radius: 0.75rem;
+}
+
+.filters{
+  border-bottom-left-radius: 0.75rem;
+  border-top-left-radius: 0.75rem;
+}
+
+.service-list{
+  border-bottom-right-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
 }
 
 .btn-cancel{

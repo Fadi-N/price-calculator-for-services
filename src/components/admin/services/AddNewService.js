@@ -7,6 +7,7 @@ import ListOfYears from "../../client/ListOfYears";
 import YearSelection from "./YearSelection";
 import ServiceName from "./ServiceName";
 import ServicePrice from "./ServicePrice";
+import ServiceBeneficialSolution from "./ServiceBeneficialSolution";
 
 function AddNewService() {
     const dispatch = useDispatch()
@@ -14,12 +15,13 @@ function AddNewService() {
     const [service, setService] = useState()
     const [price, setPrice] = useState()
     const [selectedYear, setSelectedYear] = useState('2023')
+    const [beneficialSolution, setBeneficialSolution] = useState()
     const handleCancel = () => {
         setActive(!active)
     }
 
-    const handleSubmit = (year, service, price) => {
-        dispatch(setNewService({year: year, service:service, price:price}));
+    const handleSubmit = (year, service, price, benefit) => {
+        dispatch(setNewService({year: year, service:service, price:price, benefit: benefit}));
         handleCancel()
     }
     return (
@@ -34,8 +36,9 @@ function AddNewService() {
                     <YearSelection setSelectedYear={setSelectedYear}/>
                     <ServiceName service={service} setService={setService}/>
                     <ServicePrice price={price} setPrice={setPrice}/>
+                    {/*<ServiceBeneficialSolution beneficialSolution={beneficialSolution} setBeneficialSolution={setBeneficialSolution}/>*/}
                     <div className="d-flex">
-                        <button className="btn btn-sm w-100 me-1 btn-submit" onClick={()=>handleSubmit(selectedYear, service, price)}><FontAwesomeIcon icon={faCheck} /></button>
+                        <button className="btn btn-sm w-100 me-1 btn-submit" onClick={()=>handleSubmit(selectedYear, service, price, beneficialSolution)}><FontAwesomeIcon icon={faCheck} /></button>
                         <button className="btn btn-sm w-100 btn-cancel" onClick={handleCancel}><FontAwesomeIcon icon={faXmark}/></button>
                     </div>
                 </>
